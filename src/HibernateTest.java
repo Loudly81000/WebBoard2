@@ -1,7 +1,6 @@
+import controller.HibernateUtil;
 import domain.PostInfo;
 import org.hibernate.Session;
-
-import javax.transaction.Transaction;
 
 public class HibernateTest {
 

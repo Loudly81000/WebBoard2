@@ -8,6 +8,7 @@
           <element id="module-output" name="WebBoard2" />
         </element>
       </element>
+      <element id="library" level="application" name="jQuery-2.0.0" />
     </root>
   </artifact>
 </component>

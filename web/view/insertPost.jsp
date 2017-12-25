@@ -6,20 +6,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix = "s" uri = "/struts-tags"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <html>
 <head>
     <title>WebBoard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-  <form action ="insertPost">
-      <input type = "text" name = "id"/>
-      <input type = "text" name = "title"/>
-      <input type = "text" name = "user"/>
-      <input type = "text" name = "message"/>
-      <input type = "text" name = "deadline"/>
-      <input tyep="submit" value="留言">
-  </form>
-
+<label>Test</label>
+  <s:form action ="insertPost" >
+      <s:textfield name="title" label="Title"/>
+      <s:textfield name="user" label="User"/>
+      <s:textfield name="message" label="Message"/>
+      <s:textfield name="deadline" label="deadline"/>
+      <s:submit value="Submit" label="Submit"></s:submit>
+  </s:form>
 </body>
 </html>

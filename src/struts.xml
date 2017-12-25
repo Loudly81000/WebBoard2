@@ -3,19 +3,22 @@
 <!DOCTYPE struts PUBLIC
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
-
 <struts>
 
-    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.devMode" value="true" />
+    <!--<constant name="struts.devMode" value="true"/>-->
 
-    <package name = "postOperating" extends = "struts-default" >
-            <action name="insertPost"
-            class="controller.InsertPostAction"
-            method="execute">
+    <package name = "default" extends = "struts-default" >
+        <!--<global-allowed-methods>regex:.*</global-allowed-methods>-->
+        <global-results>
+            <result>view/insertPost.jsp</result>
+        </global-results>
+
+        <action name="insertPost"
+            class = "controller.PostAction"
+            method = "insertPostInfo">
                 <result name="success">/view/showPost.jsp</result>
-            </action>
+        </action>
     </package>
-
-
 
 </struts>

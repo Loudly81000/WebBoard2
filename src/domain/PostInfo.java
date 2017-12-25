@@ -1,9 +1,10 @@
 package domain;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class PostInfo {
+public class PostInfo implements Serializable{
 
     private int id;
     private String title;
