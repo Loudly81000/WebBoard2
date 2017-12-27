@@ -2,24 +2,23 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-
 <hibernate-mapping>
 
-    <class name="domain.PostInfo" table="post_list">
+    <class name="domain.PostInfo" table="post_list"   lazy="false">
 
         <id name="id" column="id">
             <generator class="native"/>
         </id>
 
-        <property name="title" column="title"></property>
+        <property name="title" type="string" column="title"></property>
 
-        <property name="user" column="user"></property>
+        <property name="user" type="string" column="user"></property>
 
-        <property name="message" column="message"></property>
+        <property name="message" type="text" column="message"></property>
 
-        <property name="releasedate" column="releasedate"></property>
+        <property name="releasedate"  column="releasedate"></property>
 
-        <property name="deadline" column="deadline"></property>
+        <property name="deadline" type="date" column="deadline"></property>
 
     </class>
 

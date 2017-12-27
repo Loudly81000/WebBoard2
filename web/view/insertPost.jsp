@@ -19,7 +19,7 @@
       <s:textfield name="title" label="Title"/>
       <s:textfield name="user" label="User"/>
       <s:textfield name="message" label="Message"/>
-      <s:textfield name="deadline" label="deadline"/>
+      <s:textfield name="deadline" label="Deadline"/>
       <s:submit value="Submit" label="Submit"></s:submit>
   </s:form>
 </body>

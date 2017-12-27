@@ -13,10 +13,13 @@
 </head>
 <body>
 <table>
+    <a href="queryPost.action">顯示留言</a>
+    <s:iterator value="postInfoList">
     <s:property value = "title"/><br>
     <s:property value = "user"/><br>
     <s:property value = "message"/><br>
     <s:property value = "deadline"/>
+    </s:iterator>
 </table>
 </body>
 </html>

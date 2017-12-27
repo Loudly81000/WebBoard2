@@ -22,6 +22,8 @@ public class HibernateDAOBean implements HibernateDAO {
             if(session!=null)tx.rollback();{
                 e.printStackTrace();
             }
+        }finally{
+            session.close();
         }
     }
 
@@ -29,11 +31,20 @@ public class HibernateDAOBean implements HibernateDAO {
     public List<PostInfo> findAllPostInfo(){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx =  session.beginTransaction();
+        List<PostInfo> postInfoList=null;
 
-        Query query = session.createQuery("from PostInfo ");
-        List<PostInfo> postInfoList = query.list(); // get all postInfo data and save to list
-        tx.commit();
-
+        try {
+            Query query = session.createQuery("from PostInfo ");
+            postInfoList = query.list(); // get all postInfo data and save to list
+            tx.commit();
+        }catch(Exception e) {
+            if (session != null) tx.rollback();{
+            e.printStackTrace();
+            }
+        } finally{
+            session.close();
+        }
         return postInfoList;
     }
+
 }

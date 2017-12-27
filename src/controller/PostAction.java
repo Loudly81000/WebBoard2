@@ -6,6 +6,10 @@ import hibernate.dao.HibernateDAO;
 import hibernate.dao.HibernateDAOBean;
 import org.hibernate.Session;
 
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class PostAction extends ActionSupport{
@@ -13,10 +17,19 @@ public class PostAction extends ActionSupport{
     private String title;
     private String user;
     private String message;
-    private String deadline;
+    private Date deadline;
     private PostInfo postInfo;
+    private String releasedate;
     private HibernateDAO dao; // initiating HibernateDAO interface
     private List<PostInfo> postInfoList; //
+
+    public String getReleasedate() {
+        return releasedate;
+    }
+
+    public void setReleasedate(String releasedate) {
+        this.releasedate = releasedate;
+    }
 
     public PostAction(){
         dao = new HibernateDAOBean(); // build HibernateDAOBean Object
@@ -47,12 +60,19 @@ public class PostAction extends ActionSupport{
         this.message = message;
     }
 
-    public String getDeadline() {
+    public Date getDeadline() {
         return deadline;
     }
 
     public void setDeadline(String deadline) {
-        this.deadline = deadline;
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = null;
+            try {
+                date = sdf.parse(deadline);
+            }catch(ParseException e){
+                e.printStackTrace();
+            }
+            this.deadline = date;
     }
 
     public List<PostInfo> getPostInfoList() {
@@ -73,12 +93,13 @@ public class PostAction extends ActionSupport{
 //        session.close();
 //        HibernateUtil.shutdown();
         dao.addPostInfo(postInfo);
-        return "success";
+        postInfoList = dao.findAllPostInfo();
+        return "insert";
     }
 
     public String listPostInfo() throws Exception{
-        dao.findAllPostInfo();
-        return "success";
+        postInfoList = dao.findAllPostInfo();
+        return "query";
     }
 
 

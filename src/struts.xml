@@ -8,7 +8,7 @@
     <constant name="struts.devMode" value="true" />
     <!--<constant name="struts.devMode" value="true"/>-->
 
-    <package name = "default" extends = "struts-default" >
+    <package name = "default" namespace="/" extends = "struts-default" >
         <!--<global-allowed-methods>regex:.*</global-allowed-methods>-->
         <global-results>
             <result>view/insertPost.jsp</result>
@@ -17,8 +17,16 @@
         <action name="insertPost"
             class = "controller.PostAction"
             method = "insertPostInfo">
-                <result name="success">/view/showPost.jsp</result>
+                <result name="insert">/view/showPost.jsp</result>
         </action>
+
+        <action name="queryPost"
+                class="controller.PostAction"
+                method="listPostInfo">
+            <result name="query">/view/showPost.jsp</result>
+        </action>
+
+
     </package>
 
 </struts>
