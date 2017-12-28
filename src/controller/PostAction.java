@@ -64,15 +64,15 @@ public class PostAction extends ActionSupport{
         return deadline;
     }
 
-    public void setDeadline(String deadline) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date date = null;
-            try {
-                date = sdf.parse(deadline);
-            }catch(ParseException e){
-                e.printStackTrace();
-            }
-            this.deadline = date;
+    public void setDeadline(Date deadline) {
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//        Date date = null;
+//        try {
+//            date = sdf.parse(deadline);
+//        }catch(ParseException e){
+//            e.printStackTrace();
+//        }
+        this.deadline = deadline;
     }
 
     public List<PostInfo> getPostInfoList() {

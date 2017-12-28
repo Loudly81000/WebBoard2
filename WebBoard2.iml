@@ -49,5 +49,6 @@
     <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 9.0.0.M17" level="application_server_libraries" />
     <orderEntry type="library" exported="" name="Struts 2-2.5.13" level="project" />
     <orderEntry type="library" exported="" name="Hibernate 5.2.12-5.2.12" level="project" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
   </component>
 </module>

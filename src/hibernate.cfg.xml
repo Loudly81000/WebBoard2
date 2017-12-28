@@ -30,6 +30,7 @@
 
     <mapping resource="domain/PostInfo.hbm.xml"/>
 
+
   </session-factory>
 
 </hibernate-configuration>

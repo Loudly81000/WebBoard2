@@ -16,7 +16,8 @@ public class HibernateDAOBean implements HibernateDAO {
         Transaction tx =  session.beginTransaction();
 
         try{
-            session.persist(postInfo);
+            //session.persist(postInfo);
+            session.save(postInfo);
             tx.commit();
         }catch(Exception e){
             if(session!=null)tx.rollback();{

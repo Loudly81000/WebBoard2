@@ -18,7 +18,7 @@
 
         <property name="releasedate"  column="releasedate"></property>
 
-        <property name="deadline" type="date" column="deadline"></property>
+        <property name="deadline" type="java.util.Date" column="deadline"></property>
 
     </class>
 
